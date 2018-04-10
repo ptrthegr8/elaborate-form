@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact Form</title>
+    <style>
+        form {
+            /* Just to center the form on the page */
+            margin: 0 auto;
+            width: 400px;
+            /* To see the outline of the form */
+            padding: 1em;
+            border: 1px solid #CCC;
+            border-radius: 1em;
+        }
+
+        form div+div {
+            margin-top: 1em;
+        }
+
+        label {
+            /* To make sure that all labels have the same size and are properly aligned */
+            display: inline-block;
+            width: 90px;
+            text-align: right;
+        }
+
+        input,
+        textarea {
+            /* To make sure that all text fields have the same font settings
+     By default, textareas have a monospace font */
+            font: 1em sans-serif;
+
+            /* To give the same size to all text fields */
+            box-sizing: border-box;
+
+            /* To harmonize the look & feel of text field border */
+            border: 1px solid #999;
+        }
+
+        input:focus,
+        textarea:focus {
+            /* To give a little highlight on active elements */
+            border-color: #000;
+        }
+
+        textarea {
+            /* To properly align multiline text fields with their labels */
+            vertical-align: top;
+
+            /* To give enough room to type some text */
+            height: 5em;
+        }
+
+        .button {
+            /* To position the buttons to the same position of the text fields */
+            padding-left: 90px;
+            /* same size as the label elements */
+        }
+
+        button {
+            /* This extra margin represent roughly the same space as the space
+     between the labels and their text fields */
+            margin-left: .5em;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="http://localhost:3000" method="POST">
+        <fieldset>
+            <legend>Personal Info</legend>
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="user_name" autofocus>
+            </div>
+            <div>
+                <label for="mail">Email:</label>
+                <input type="email" id="mail" name="user_mail">
+            </div>
+            <div>
+                <label for="cell">Cell Phone Number:</label>
+                <input type="tel" id="cell" name="user_cell">
+            </div>
+            <div>
+                <label for="homepage">Homepage:</label>
+                <input type="url" id="homepage" name="home_page">
+            </div>
+            <div>
+                <label for="favorite-color">Favorite Color:</label>
+                <input type="color" id="favorite-color" name="favorite_color">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Communication Method</legend>
+            <div>
+                Preferred Communication Method: <br>
+                <input type="radio" id="cell" name="pref_comm_meth" value="cell">Cell Phone</input>
+                <input type="radio" id="email" name="pref_comm_meth" value="email">Email</input>
+                <input type="radio" id="mail" name="pref_comm_meth" value="snail mail">Snail Mail</input>
+                <input type="radio" id="raven" name="pref_Comm_meth" value="ravens">Ravens</input>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Your Device</legend>
+            <div>
+                <input type="checkbox" id="mac" name="devices" value="mac">Mac</input>
+                <input type="checkbox" id="windows" name="devices" value="windows">Windows</input>
+                <input type="checkbox" id="ios" name="devices" value="ios">iOS</input>
+                <input type="checkbox" id="android" name="devices" value="android">Android</input>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Your Message</legend>
+            <div>
+                <label for="test">Plan:</label>
+                <input type="text" id="test" name="test" value="Gold++ Subscription" disabled>
+            </div>
+            <div>
+                <label for="message-subject">Message Subject:</label>
+                <select type="checkbox" id="message-subject" name="message_subject">
+                    <option value="Feedback">Feedback</option>
+                    <option value="Reporting">Reporting a Bug</option>
+                    <option value="Just Want to Chat">Just Want to Chat</option>
+                </select>
+            </div>
+            <div>
+                <label for="msg">Message:</label>
+                <textarea id="msg" name="user_message"></textarea>
+            </div>
+        </fieldset>
+        <!-- 
+        Cell (phone number)
+        Homepage (url)
+        Preferred communication method (radio buttons) e.g. phone, email, etc.
+        Devices (checkboxes) e.g. iOS, android, mac, windows, etc.
+        Message Subject (multiple choice select box) e.g. “Feedback”, “Reporting a bug”, etc.
+        At least one Advanced form widget (number, slider, date, or color picker) 
+        -->
+        <!-- Submit below-->
+        <div class="button">
+            <button type="submit">Send your message</button>
+        </div>
+        <div class="button">
+            <button type="reset">Reset</button>
+        </div>
+    </form>
+</body>
+
+</html>
